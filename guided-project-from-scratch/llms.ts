@@ -13,21 +13,21 @@ const PROJECT_ID = "skills-network";
 const llmComplex = new ChatOpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   temperature: 0.7,
-  model: "gpt-3.5-turbo", 
+  model: "gpt-4o-mini", 
 });
 
 // LLM 2 - Simple: Formulates feedback based on grading JSON
 const llmSimple = new ChatOpenAI({
   apiKey: process.env.OPENAI_API_KEY, 
   temperature: 0.5,
-  model: "gpt-3.5-turbo", 
+  model: "gpt-4o-mini", 
 });
 
 // Optional LLM 3 - Guardrails: Content moderation
 const llmGuardrails = new ChatOpenAI({
   apiKey: process.env.OPENAI_API_KEY, 
   temperature: 0.3,
-  model: "gpt-3.5-turbo", 
+  model: "gpt-4o-mini", 
 });
 
 // Llama model with IBM WatsonX
@@ -71,13 +71,9 @@ const feedbackPrompt = ChatPromptTemplate.fromMessages([
 Based on the following grading in {language}, provide constructive feedback to the student in English so they can improve in learning the language. If the mark is 10 then just say the user did a great work. Do not use markdown.
 
 Grading:
-{{
-"mark": {mark},
-"mistakes": {mistakes}
-  }}
-
-Feedback:
-    `,
+Mark: {mark}
+Mistakes: {mistakes}
+`,
   ],
 ]);
 
@@ -86,6 +82,7 @@ const guardrailsPrompt = ChatPromptTemplate.fromMessages([
 ["system", "You are a content moderator." ],
 ["user",`
 Analyze the following feedback in {language} for any inappropriate or offensive content. Respond with "Clean" if the content is appropriate or "Flagged" if it contains disallowed content.
+
 
 Feedback:
 "{feedback}"
@@ -187,7 +184,6 @@ export async function generateFeedback(language: string, grading: GradingRespons
     // Format the prompt with grading details and selected language
     const formattedPrompt = await feedbackPrompt.format({ language, mark, mistakes: mistakesString });
     
-    console.log("Formatted prompt for generating feedback", formattedPrompt);
 
     // Invoke the LLM with the formatted messages
     const feedbackResponse = await llmWatsonx.invoke(formattedPrompt);
