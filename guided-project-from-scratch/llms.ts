@@ -68,7 +68,7 @@ const feedbackPrompt = ChatPromptTemplate.fromMessages([
 
   ["system","You are a friendly language tutor." ],
   ["user",`
-Based on the following grading in {language}, provide constructive feedback to the student in English so they can improve in learning the language. If the mark is 10 then just say the user did a great work. Do not use markdown.
+Based on the following grading in {language}, provide constructive feedback to the student in English so they can improve in learning the language. If the mark is 10 then just say the user did a great job. Do not use markdown.
 
 Grading:
 Mark: {mark}

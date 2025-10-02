@@ -7,7 +7,7 @@ prompts:
     <|start_header_id|>user<|end_header_id|>
 
     Based on the following grading in {{language}}, provide constructive feedback to the student in English
-    so they can improve in learning the language. If the mark is 10 then just say the user did a great work. Do not use markdown.
+    so they can improve in learning the language. If the mark is 10 then just say the user did a great job. Do not use markdown.
 
     Grading:
     {
@@ -49,7 +49,7 @@ tests:
       mistakes: "[]"
     assert:
     - type: contains
-      value: "You did a great work"
+      value: "You did a great job"
     - type: not-contains
       value: "Please provide" 
     - type: cost
