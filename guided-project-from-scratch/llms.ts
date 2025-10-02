@@ -32,7 +32,7 @@ const llmGuardrails = new ChatOpenAI({
 
 // Llama model with IBM WatsonX
 const llmWatsonx = new WatsonxAI({
-  modelId: "meta-llama/llama-3-1-8b-instruct",
+  modelId: "meta-llama/llama-3-2-11b-vision-instruct",
   // No need to set this value at the moment as the key is already exported in this project
   // ibmCloudApiKey: "set_when_using_your_own_account"  
   projectId: PROJECT_ID,

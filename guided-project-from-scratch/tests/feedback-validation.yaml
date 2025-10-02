@@ -19,8 +19,8 @@ prompts:
     <|start_header_id|>assistant<|end_header_id|>"
 
 providers:
-  - "watsonx:meta-llama/llama-3-2-3b-instruct"
-  - "watsonx:meta-llama/llama-3-1-8b-instruct"
+  - "watsonx:meta-llama/llama-4-maverick-17b-128e-instruct-fp8"
+  - "watsonx:meta-llama/llama-3-2-11b-vision-instruct"
 
 tests:
   - description: 'Feedback for French, mark 8, a few mistakes'
