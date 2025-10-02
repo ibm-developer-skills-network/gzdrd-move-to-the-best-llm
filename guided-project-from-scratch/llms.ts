@@ -13,21 +13,21 @@ const PROJECT_ID = "skills-network";
 const llmComplex = new ChatOpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   temperature: 0.7,
-  model: "gpt-5-mini", 
+  model: "gpt-4o-mini", 
 });
 
 // LLM 2 - Simple: Formulates feedback based on grading JSON
 const llmSimple = new ChatOpenAI({
   apiKey: process.env.OPENAI_API_KEY, 
   temperature: 0.5,
-  model: "gpt-5-mini", 
+  model: "gpt-4o-mini", 
 });
 
 // Optional LLM 3 - Guardrails: Content moderation
 const llmGuardrails = new ChatOpenAI({
   apiKey: process.env.OPENAI_API_KEY, 
   temperature: 0.3,
-  model: "gpt-5-mini", 
+  model: "gpt-4o-mini", 
 });
 
 // Llama model with IBM WatsonX
