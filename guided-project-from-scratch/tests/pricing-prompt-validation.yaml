@@ -212,16 +212,16 @@ tests:
             "properties": {
               "mark": {
                 "type": "integer",
-                "minimum": 2,
-                "maximum": 5
+                "minimum": 10,
+                "maximum": 10
               },
               "mistakes": {
                 "type": "array",
                 "items": {
                   "type": "string",
                 },
-                "minItems": 1,
-                "maxItems": 1
+                "minItems": 0,
+                "maxItems": 0
               }
             },
             "additionalProperties": false
@@ -241,15 +241,15 @@ tests:
             "properties": {
               "mark": {
                 "type": "integer",
-                "minimum": 1,
-                "maximum": 10
+                "minimum": 4,
+                "maximum": 7
               },
               "mistakes": {
                 "type": "array",
                 "items": {
                   "type": "string",
                 },
-                "minItems": 0,
+                "minItems": 1,
                 "maxItems": 10
               }
             },
@@ -278,8 +278,8 @@ tests:
                 "items": {
                   "type": "string",
                 },
-                "minItems": 5,
-                "maxItems": 9
+                "minItems": 1,
+                "maxItems": 10
               }
             },
             "additionalProperties": false
