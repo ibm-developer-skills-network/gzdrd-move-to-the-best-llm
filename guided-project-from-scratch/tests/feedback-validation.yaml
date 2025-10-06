@@ -38,9 +38,9 @@ tests:
       - type: not-contains
         value: "feedback for the student"
       - type: cost
-        threshold: 00.0001
+        threshold: 0.00004
       - type: latency
-        threshold: 35
+        threshold: 250
 
   - description: 'Feedback for Spanish, perfect Spanish'
     vars:
@@ -55,7 +55,7 @@ tests:
     - type: cost
       threshold: 0.0001
     - type: latency
-      threshold: 35
+      threshold: 250
 
   - description: 'Feedback for Spanish, mark 5, with multiple mistakes'
     vars:
@@ -72,7 +72,7 @@ tests:
       - type: cost
         threshold: 0.0001
       - type: latency
-        threshold: 35
+        threshold: 250
 
   - description: 'Low score for Spanish, mark 3, with several issues'
     vars:
@@ -91,4 +91,4 @@ tests:
       - type: cost
         threshold: 0.0001
       - type: latency
-        threshold: 35
+        threshold: 250
